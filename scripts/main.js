@@ -3,6 +3,7 @@
  * Point d'entrée, c'est lui qui intialise le jeu et lance la boucle de jeu. 
  * 
  *********************************************************************************/
+let score = 0;
 
 lancerJeu()
 

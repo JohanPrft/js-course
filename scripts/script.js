@@ -13,8 +13,8 @@ function afficherResultat(score, nbMotsProposes) {
     // Récupération de la zone dans laquelle on va écrire le score
     let spanScore = document.querySelector(".zoneScore span")
     // Ecriture du texte
-    let affichageScore = `${score} / ${nbMotsProposes}` 
-    // On place le texte à l'intérieur du span. 
+    let affichageScore = `${score} / ${nbMotsProposes}`
+    // On place le texte à l'intérieur du span.
     spanScore.innerText = affichageScore
 }
 
@@ -35,8 +35,8 @@ function afficherProposition(proposition) {
  * @param {string} score : le score. 
  */
 function afficherEmail(nom, email, score) {
-    let mailto = `mailto:${email}?subject=Partage du score Azertype&body=Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site d'Azertype !`
-    location.href = mailto
+    let bodyText = `Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site d'Azertype!`;
+    location.href = `mailto:${email}?subject=Partage%20du%20score%20Azertype&body=${encodeURIComponent(bodyText)}`;
 }
 
 /**
@@ -46,7 +46,6 @@ function afficherEmail(nom, email, score) {
 function lancerJeu() {
     // Initialisations
     initAddEventListenerPopup()
-    let score = 0
     let i = 0
     let listeProposition = listeMots
 
